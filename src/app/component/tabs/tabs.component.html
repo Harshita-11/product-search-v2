@@ -1,0 +1,61 @@
+<!-- <div class="search-tabs">
+  <button class="tab" type="button" (click)="addRemoveTabData('switch')">
+    Tab {{ tabIndex + 1 }}
+  </button>
+  <button
+    class="add-tab"
+    type="button"
+    (click)="addRemoveTabData('remove')"
+    *ngIf="!(first && last)"
+  >
+    &#8208;
+  </button>
+  <button
+    class="remove-tab"
+    type="button"
+    (click)="addRemoveTabData('add')"
+    *ngIf="last"
+  >
+    &#43;
+  </button>
+</div> -->
+<!-- <mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      First
+    </ng-template>
+    Content 1
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      Second
+    </ng-template>
+    Content 2
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      Third
+    </ng-template>
+
+    Content 3
+  </mat-tab>
+</mat-tab-group> -->
+      <button class="tab" type="button" (click)="addRemoveTabData('switch')">Tab{{ tabIndex + 1 }}</button>
+      <button class="remove-tab" type="button" (click)="addRemoveTabData('remove')" *ngIf="!(first && last)"><mat-icon>remove_circle_outline</mat-icon></button>
+      <button class="add-tab" type="button" (click)="addRemoveTabData('add')" *ngIf="last"><mat-icon>add_circle_outline</mat-icon></button>
+<!-- <mat-tab-group>
+  <mat-tab  label="Tab{{ tabIndex + 1 }}"></mat-tab>
+  <button class="tab" type="button" (click)="addRemoveTabData('switch')"></button>
+</mat-tab-group>
+  <button class="remove-tab" type="button" (click)="addRemoveTabData('remove')" *ngIf="!(first && last)">
+    &#8208;
+  </button>
+  <button class="add-tab" type="button" (click)="addRemoveTabData('add')" *ngIf="last">
+    &#43;
+  </button> -->
+

@@ -1,0 +1,67 @@
+<div class="search-container">
+  <form [formGroup]="searchForm" class="search-container-searchForm">
+    <div class="search-container-searchForm-inputField">
+      <mat-form-field>
+        <input matInput type="text" class="form-control" placeholder="Search" formControlName="search" />
+      </mat-form-field>
+    </div>
+
+    <mat-radio-group aria-label="Select an option" class="search-container-searchForm-radioField"
+      formControlName="price">
+      <mat-radio-button value="less" name="price">Less than 5000</mat-radio-button>
+      <mat-radio-button value="more" name="price">More than 5000</mat-radio-button>
+      <mat-radio-button value="all" name="price">All</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="search-container-searchForm-dropdownField">
+      <mat-label>Select Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let data of uniqueCategoryName" [value]="data">{{ data }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button type="submit" mat-button (click)="onSubmit()">Submit</button>
+    <button type="button" mat-button (click)="onReset()">Reset</button>
+  </form>
+</div>
+<!-- <div class="search-container">
+  <form [formGroup]="searchForm" class="search-container-searchForm">
+    <div class="search-container-searchForm-inputField">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        formControlName="search"
+      />
+    </div>
+    <div class="search-container-searchForm-radioField">
+      <input
+        type="radio"
+        name="price"
+        value="less"
+        formControlName="price"
+      /><label>less</label>
+      <input
+        type="radio"
+        name="price"
+        value="more"
+        formControlName="price"
+      /><label>more</label>
+      <input
+        type="radio"
+        name="price"
+        value="all"
+        formControlName="price"
+      /><label>All</label>
+    </div>
+    <div class="search-container-searchForm-dropdownField">
+      <select id="category" formControlName="category">
+        <option *ngFor="let data of uniqueCategoryName" [ngValue]="data">{{
+          data
+        }}</option>
+      </select>
+    </div>
+    <button type="submit" (click)="onSubmit()">Submit</button>
+    <button type="button" (click)="onReset()">Reset</button>
+  </form>
+</div> -->

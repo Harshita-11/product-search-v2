@@ -1,0 +1,48 @@
+.login-form-container {
+  margin: 30px auto;
+
+  .login-form-card {
+    background: #0d00ff0f;
+  }
+
+  .login-form {
+    margin: 20px auto 0;
+    width: 100%;
+    .mat-form-field {
+        display: block;
+    }
+  }
+
+  .form-heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  .button-container {
+    button {
+      margin: 8px auto;
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login-form-container {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 30px;
+
+    .login-form-card {
+      margin: 0 auto;
+      width: 50%
+    }
+
+    .button-container {
+      button {
+        margin: 0 12px 0 0;
+        display: inline-block;
+      }
+    }
+  }
+}

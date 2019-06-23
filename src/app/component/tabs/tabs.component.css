@@ -1,0 +1,23 @@
+.search-tabs {
+  margin-left: 10px;
+  display: inline;
+}
+
+.mat-tab-group {
+  display: inline-block;
+}
+.add-tab, .remove-tab {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  right: 0px;
+  margin-top: 7px;
+  padding: 0;
+}
+.mat-icon {
+  color: honeydew;
+}
+/* .tabs-container {
+  background: red;
+} */
+

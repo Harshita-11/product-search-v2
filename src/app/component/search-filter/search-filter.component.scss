@@ -1,0 +1,31 @@
+.search-container {
+    float: left;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #ffb6c1;
+    min-height: 910px;
+    height: auto;
+    &-searchForm {
+        margin: 0 auto;
+        margin-left: 25px;
+        &-inputField{
+            margin: 0 0 10px 0;
+        }
+        &-radioField {
+            input {
+                margin: 0 10px 0 10px;
+            }
+        }
+        .mat-radio-button {
+            margin: 0 10px 0 0;
+        }
+        &-dropdownField {
+            display: block;
+            margin: 30px 0 10px 0;
+            width: 54%;
+        }
+    }
+    button {
+        margin-right: 10px;
+    }
+}

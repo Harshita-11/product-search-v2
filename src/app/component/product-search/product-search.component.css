@@ -1,0 +1,26 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 13px;
+}
+
+.cards-container .product-card {
+  padding: 10px;
+  margin: 10px;
+  flex: 1 1 20%;
+  margin-top: 7px;
+}
+.tabs-container {
+  background: cornflowerblue;
+  margin-top: 15px;
+}
+
+.worse {
+  background: #ff00008a;
+}
+.average {
+  background: #ffa5007d;
+}
+.best {
+  background: #0080006e;
+}
