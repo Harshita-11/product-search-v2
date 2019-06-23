@@ -5,7 +5,7 @@ import {
   FormControl,
   Validators
 } from '@angular/forms';
-import { Router } from '@angular/router';
+
 import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _authService: AuthenticationService,
-    private _router: Router
+    private _authService: AuthenticationService
   ) {}
 
   ngOnInit(): void {
@@ -34,16 +33,20 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    if (this.loginForm.valid) {
-      this._authService.setCredentials(
-        'currentUser',
-        this.loginForm.controls['username'].value
-      );
-      this._authService.setCredentials(
-        'currentPassword',
-        this.loginForm.controls['password'].value
-      );
-      this._router.navigate(['/product']);
+    // if (this.loginForm.valid) {
+    //   this._authService.setCredentials(
+    //     'currentUser',
+    //     this.loginForm.controls['username'].value
+    //   );
+    //   this._authService.setCredentials(
+    //     'currentPassword',
+    //     this.loginForm.controls['password'].value
+    //   );
+    //   this._router.navigate(['/product']);
+    // }
+    if (this._authService.isUserAuthentic(this.loginForm.value)) {
+      this._authService.login();
+    } else {
     }
   }
 

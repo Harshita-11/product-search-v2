@@ -39,10 +39,9 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     MaterialModule
   ],
   providers: [
-    DemoService, MessageService,
-    { provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true }
+    DemoService,
+    MessageService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

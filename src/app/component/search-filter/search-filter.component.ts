@@ -3,8 +3,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
 
+import { AuthenticationService } from '../../service/authentication.service';
 import { MessageService } from '../../service/subscribemessage.service';
-import { IFilterObj, IMappedProducts } from 'src/app/models/product.model';
+
+import { IFilterObj, IMappedProducts } from '../../models/product.model';
 
 @Component({
   selector: 'app-search-filter',
@@ -20,7 +22,10 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
   default: string;
   searchForm: FormGroup;
 
-  constructor(private messageService: MessageService) {
+  constructor(
+    private messageService: MessageService,
+    private _authService: AuthenticationService
+  ) {
     this.searchForm = new FormGroup({
       search: new FormControl(''),
       price: new FormControl(''),
@@ -61,6 +66,10 @@ export class SearchFilterComponent implements OnInit, OnDestroy {
   onReset(): void {
     this.searchForm.reset({ search: '', price: 'all', category: this.default });
     this.onSubmit();
+  }
+
+  logout(): void {
+    this._authService.logout();
   }
 
   ngOnDestroy(): void {

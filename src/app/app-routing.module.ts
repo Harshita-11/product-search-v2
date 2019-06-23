@@ -5,9 +5,14 @@ import { ProductSearchComponent } from './component/product-search/product-searc
 import { LoginComponent } from './component/login/login.component';
 
 import { AuthGuardService } from './service/auth-guard.service';
+import { LoginGuardService } from './service/login-guard.service';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LoginGuardService]
+  },
   {
     path: 'product',
     component: ProductSearchComponent,
