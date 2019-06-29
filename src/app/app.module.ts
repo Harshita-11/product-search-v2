@@ -17,6 +17,10 @@ import { MaterialModule } from './material.module';
 import { LoginComponent } from './component/login/login.component';
 import { ErrorComponent } from './component/error/error.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
+import { DemoComponent } from './component/demo1.component';
+import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { ListDataResolver } from './service/resolver.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     TabsComponent,
     ProductSearchComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    DemoComponent,
+    SnackBarComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +48,10 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
   providers: [
     DemoService,
     MessageService,
+    // ListDataResolver,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
+  entryComponents: [SnackBarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

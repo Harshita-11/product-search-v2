@@ -7,9 +7,10 @@ import {
   MatOptionModule,
   MatCardModule,
   MatTabsModule,
-  MatButtonModule,
   MatProgressSpinnerModule,
-  MatIconModule
+  MatIconModule,
+  MatSnackBarModule,
+  MatButtonModule
 } from '@angular/material';
 
 @NgModule({
@@ -23,7 +24,8 @@ import {
     MatTabsModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule {}

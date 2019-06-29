@@ -1,3 +1,7 @@
-<mat-card class="card-container" *ngFor="let label of cardLabels">
-  {{ label | FormatLabelPipe }}: {{ cardData[label] }}
+<mat-card class="card-container" (click)="productDetails(cardData)">
+  <ul>
+    <li *ngFor="let label of cardLabels">
+      {{ label | FormatLabelPipe }}: {{ cardData[label] }}
+    </li>
+  </ul>
 </mat-card>

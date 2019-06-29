@@ -6,13 +6,24 @@
         action=""
         class="login-form"
         [formGroup]="loginForm"
-        (submit)="login()">
+        (submit)="login()"
+      >
         <mat-form-field class="full-width">
-          <input type="text" matInput placeholder="Username" formControlName="username" />
+          <input
+            type="text"
+            matInput
+            placeholder="Username"
+            formControlName="username"
+          />
           <mat-error>Username is required</mat-error>
         </mat-form-field>
         <mat-form-field class="full-width">
-          <input type="password" matInput placeholder="Password" formControlName="password" />
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
           <mat-error>Password is required</mat-error>
         </mat-form-field>
 
@@ -22,13 +33,18 @@
               mat-raised-button
               color="accent"
               type="submit"
-              [disabled]="!loginForm.valid">submit
-              </button>
+              [disabled]="!loginForm.valid"
+            >
+              submit
+            </button>
             <button
               mat-raised-button
               color="warn"
               type="button"
-              (click)="resetData()">Reset</button>
+              (click)="resetData()"
+            >
+              Reset
+            </button>
           </div>
         </mat-card-actions>
       </form>

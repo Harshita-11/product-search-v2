@@ -12,10 +12,12 @@
 .tab-component {
   position: relative;
 }
+
 .tab-component.active {
   border-bottom: 2px solid;
   color: transparent;
 }
+
 .tab-component .tab {
   padding: 10px 22px;
   border: 0;
@@ -25,12 +27,17 @@
   font-size: 17px;
   font-weight: 500;
 }
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background: none;
 }
-.mat-tab-header, .mat-tab-nav-bar {
+
+.mat-tab-header,
+.mat-tab-nav-bar {
   border: 0;
 }
+
 html,
 body {
   height: 100%;
@@ -40,6 +47,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 .loader {
   height: 100vh;
   display: flex;
@@ -47,14 +55,25 @@ body {
   justify-content: center;
   margin: -52px 0 0 -16px;
 }
+
 .mat-tab-labels .mat-tab-label {
   border-right: 2px solid blue;
   border-radius: 10px;
   opacity: 1;
 }
+
 .mat-tab-label-active {
   background: red;
 }
+
 .tab-component.active .tab {
   background: red;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-bottom: 10px;
+}
+
+.mat-card-actions {
+  margin-top: 10px;
 }

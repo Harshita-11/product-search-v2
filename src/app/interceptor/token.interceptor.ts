@@ -14,7 +14,7 @@ export class TokenInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token') as string;
+    const token = localStorage.getItem('authObj') as string;
     // const token = '12345678';
 
     if (token) {
@@ -23,9 +23,10 @@ export class TokenInterceptor implements HttpInterceptor {
           Authorization: `Bearer ${token}`
         }
       });
+      // console.log(req);
     }
 
-    console.log('TokenInterceptor: ', req);
+    // console.log('TokenInterceptor: ', req);
 
     return next.handle(req);
   }

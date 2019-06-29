@@ -12,7 +12,8 @@ import { IMappedProducts, IFilterObj, ITab } from '../../models/product.model';
   styleUrls: ['./product-search.component.css']
 })
 export class ProductSearchComponent implements OnInit, OnDestroy {
-  @ViewChild(SearchFilterComponent) searchFilterRef: SearchFilterComponent;
+  @ViewChild(SearchFilterComponent, { static: false })
+  searchFilterRef: SearchFilterComponent;
 
   subscription: Subscription = new Subscription();
 
@@ -41,6 +42,7 @@ export class ProductSearchComponent implements OnInit, OnDestroy {
 
     this.subscription.add(
       this.demoService.getList().subscribe((result: Array<IMappedProducts>) => {
+        this.messageService.listData = result;
         this.messageService.sendMessage(result);
       })
     );

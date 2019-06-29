@@ -1,22 +1,14 @@
 <div class="tabs-container">
   <mat-tab-group>
-    <mat-tab
-      *ngFor="
+    <mat-tab *ngFor="
         let tab of tabData;
         let i = index;
         let last = last;
         let first = first
-      "
-    >
+      ">
       <ng-template mat-tab-label>
-        <app-tabs
-          class="tab-component"
-          [tabReference]="filterObj"
-          [tabIndex]="i"
-          [last]="last"
-          [first]="first"
-          [ngClass]="{ active: i === activeTabIndex }"
-        ></app-tabs>
+        <app-tabs class="tab-component" [tabReference]="filterObj" [tabIndex]="i" [last]="last" [first]="first"
+          [ngClass]="{ active: i === activeTabIndex }"></app-tabs>
       </ng-template>
     </mat-tab>
   </mat-tab-group>
@@ -24,17 +16,12 @@
 <app-search-filter></app-search-filter>
 <div [ngSwitch]="dataLoadingCase">
   <div class="cards-container" *ngSwitchCase="'dataLoaded'">
-    <app-card
-      class="product-card"
-      *ngFor="let card of filteredData"
-      [cardData]="card"
-      [cardLabels]="cardLabels"
+    <app-card class="product-card" *ngFor="let card of filteredData" [cardData]="card" [cardLabels]="cardLabels"
       [ngClass]="{
         worse: card.rating <= 2,
         average: card.rating > 2 && card.rating <= 3,
         best: card.rating > 3 && card.rating <= 5
-      }"
-    ></app-card>
+      }"></app-card>
   </div>
 
   <app-error *ngSwitchCase="'error'"> </app-error>

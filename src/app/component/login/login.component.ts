@@ -5,8 +5,10 @@ import {
   FormControl,
   Validators
 } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 import { AuthenticationService } from 'src/app/service/authentication.service';
+import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +17,12 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  durationInSeconds = 5;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _authService: AuthenticationService
+    private _authService: AuthenticationService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +37,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+    // console.log(
+    //   'inside login',
+    //   this._authService.isUserAuthentic(this.loginForm.value)
+    // );
     // if (this.loginForm.valid) {
     //   this._authService.setCredentials(
     //     'currentUser',
@@ -47,10 +55,17 @@ export class LoginComponent implements OnInit {
     if (this._authService.isUserAuthentic(this.loginForm.value)) {
       this._authService.login();
     } else {
+      this.openSnackBar();
     }
   }
 
   resetData(): void {
     this.loginForm.reset();
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackBarComponent, {
+      duration: this.durationInSeconds * 1000
+    });
   }
 }

@@ -1,0 +1,52 @@
+<!-- <div class="child">
+  <h1>{{ demoTitle }}</h1>
+  <h1>{{titleChild}}</h1>
+  <button (click)="demoEventMethod()">Click me(child)</button>
+  <button (click)="sendMessagetoParentComponent()">Click me Child Subscribe-Subject</button>
+</div> -->
+<!-- <button (click)="sendMessagetoParentComponent()">Click me Child Subscribe-Subject</button> -->
+<div class="search-container">
+  <form
+    [formGroup]="searchForm"
+    class="search-container-searchForm"
+    (submit)="onSubmit()"
+  >
+    <div class="search-container-searchForm-inputField">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        formControlName="search"
+      />
+    </div>
+    <div class="search-container-searchForm-radioField">
+      <input
+        type="radio"
+        name="price"
+        value="less"
+        formControlName="price"
+      /><label>less than 5000</label>
+      <input
+        type="radio"
+        name="price"
+        value="more"
+        formControlName="price"
+      /><label>more than 5000</label>
+      <input
+        type="radio"
+        name="price"
+        value="all"
+        formControlName="price"
+      /><label>all</label>
+    </div>
+    <div class="search-container-searchForm-dropdownField">
+      <select id="category" formControlName="category">
+        <option *ngFor="let data of uniqueCategoryName" [ngValue]="data">{{
+          data
+        }}</option>
+      </select>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="button" (click)="onReset()">Reset</button>
+  </form>
+</div>

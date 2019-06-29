@@ -1,0 +1,10 @@
+<app-card
+  class="product-card"
+  [cardData]="card"
+  [cardLabels]="cardLabels"
+  [ngClass]="{
+    worse: card?.rating <= 2,
+    average: card?.rating > 2 && card?.rating <= 3,
+    best: card?.rating > 3 && card?.rating <= 5
+  }"
+></app-card>

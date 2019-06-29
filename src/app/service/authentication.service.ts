@@ -42,6 +42,7 @@ export class AuthenticationService {
   login(): void {
     this.setCredentials('authObj', JSON.stringify(this.adminObj));
     this._router.navigate(['/product']);
+    // this._router.navigate(['/lazymodule']);
   }
 
   logout(): void {
