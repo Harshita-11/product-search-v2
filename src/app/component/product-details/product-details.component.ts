@@ -20,10 +20,17 @@ export class ProductDetailsComponent implements OnInit {
 
   getProductDetails(): void {
     const name: string = this._route.snapshot.params.name;
-
     this.demoSrvc.getList().subscribe(data => {
-      console.log(data, name);
-      this.card = data.filter(item => item.name === name)[0];
+      // this.card = data.filter(item => item.name === name)[0];
+      this.card = data.reduce(
+        (cardDetail, item) => {
+          if (item.name === name) {
+            cardDetail = { ...item };
+          }
+          return cardDetail;
+        },
+        {} as IMappedProducts
+      );
       this.cardLabels = Object.keys(data[0]);
     });
   }

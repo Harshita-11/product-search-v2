@@ -42,7 +42,6 @@ export class ProductSearchComponent implements OnInit, OnDestroy {
 
     this.subscription.add(
       this.demoService.getList().subscribe((result: Array<IMappedProducts>) => {
-        this.messageService.listData = result;
         this.messageService.sendMessage(result);
       })
     );

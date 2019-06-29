@@ -26,10 +26,6 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //     this.loginForm = new FormGroup({
-    //       username: new FormControl('', Validators.required),
-    //       password: new FormControl('', Validators.required)
-    // });
     this.loginForm = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -37,21 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    // console.log(
-    //   'inside login',
-    //   this._authService.isUserAuthentic(this.loginForm.value)
-    // );
-    // if (this.loginForm.valid) {
-    //   this._authService.setCredentials(
-    //     'currentUser',
-    //     this.loginForm.controls['username'].value
-    //   );
-    //   this._authService.setCredentials(
-    //     'currentPassword',
-    //     this.loginForm.controls['password'].value
-    //   );
-    //   this._router.navigate(['/product']);
-    // }
     if (this._authService.isUserAuthentic(this.loginForm.value)) {
       this._authService.login();
     } else {

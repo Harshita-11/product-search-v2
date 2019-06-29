@@ -9,10 +9,6 @@ export class MessageService {
   private subjectTest = new Subject<Array<IMappedProducts>>();
   private filterObj = new Subject<IFilterObj>();
   private tabData = new Subject<ITab>();
-  listData: Array<IMappedProducts>;
-  constructor() {
-    this.listData = [];
-  }
 
   sendMessage(message: Array<IMappedProducts>) {
     this.subjectTest.next(message);
